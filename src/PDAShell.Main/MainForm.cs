@@ -27,6 +27,14 @@ namespace PDAShell.Main
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                FormBorderStyle = FormBorderStyle.Sizable;
+            }
+            else 
+            { 
+                FormBorderStyle = FormBorderStyle.None;
+            }
             clockLabel.Text = DateTime.Now.ToString("HH:mm");
             dateLbl.Text = DateTime.Now.ToLongDateString();
             timer1.Enabled = true;
@@ -108,6 +116,11 @@ namespace PDAShell.Main
             usrAddress.Text = "I live in" + (addressBox.Text != "" ? " " + addressBox.Text : "...");
             usrPhone.Text = "Contact me at" + (phoneBox.Text != "" ? " " + phoneBox.Text : "...");
             usrEMail.Text = "Send e-mails to" + (emailBox.Text != "" ? " " + emailBox.Text : "...");
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
