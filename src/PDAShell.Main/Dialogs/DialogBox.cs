@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PDAShell.Main;
 
 namespace PDAShell.Main.Dialogs
 {
     public partial class DialogBox : Form
     {
+
         public DialogBox()
         {
             InitializeComponent();
@@ -19,13 +21,13 @@ namespace PDAShell.Main.Dialogs
 
         private void okBtn_Click(object sender, EventArgs e)
         {
-            DialogResult = System.Windows.Forms.DialogResult.OK;
+            MainForm.isAccepted = true;
             Close();
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-            DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            MainForm.isAccepted = false;
             Close();
         }
     }

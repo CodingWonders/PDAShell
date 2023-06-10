@@ -19,6 +19,7 @@ namespace PDAShell.Main
         public string ownerAddress;
         public string ownerPhone;
         public string ownerEmail;
+        public static bool isAccepted { get; set; }
 
         public MainForm()
         {
@@ -70,7 +71,7 @@ namespace PDAShell.Main
                 ApplySettings();
                 // Hide secondary screens
                 ownerInfoSettings.Visible = false;
-                settingsPanel.Visible = true;
+                settings_mainScreen.Visible = true;
             }
             else if (closeBtn.Tag.ToString() == "close")
             {
@@ -101,7 +102,7 @@ namespace PDAShell.Main
                 switch (listView1.FocusedItem.Index)
                 {
                     case 0:
-                        settingsPanel.Visible = false;
+                        settings_mainScreen.Visible = false;
                         ownerInfoSettings.Visible = true;
                         closeBtn.Image = Properties.Resources.ok;
                         closeBtn.Tag = "ok";
@@ -224,14 +225,40 @@ namespace PDAShell.Main
             {
                 case 8:
                     showDialog(400, 260, "Other Installed Applications", "We don't know whether these applications can get you distracted.\n\nAre you sure you want to continue?", true, 1, true, true);
-                    Form dialogBox = new Dialogs.DialogBox();
-                    if (dialogBox.DialogResult == System.Windows.Forms.DialogResult.OK)
+                    if (isAccepted)
                     {
-                        MessageBox.Show("Hello World");
+                        apps_mainScreen.Visible = false;
+                        otherApps.Visible = true;
+                        usefulWebsites.Visible = false;
                     }
+                    break;
+                case 9:
+                    apps_mainScreen.Visible = false;
+                    otherApps.Visible = false;
+                    usefulWebsites.Visible = true;
                     break;
                 default:
                     break;
+            }
+        }
+
+        private void listView5_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (listView5.FocusedItem.Index == listView5.Items.Count - 1)
+            {
+                usefulWebsites.Visible = false;
+                apps_mainScreen.Visible = true;
+                return;
+            }
+        }
+
+        private void listView4_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (listView4.FocusedItem.Index == listView4.Items.Count - 1)
+            {
+                otherApps.Visible = false;
+                apps_mainScreen.Visible = true;
+                return;
             }
         }
     }
