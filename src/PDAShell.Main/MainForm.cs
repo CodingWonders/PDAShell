@@ -55,6 +55,7 @@ namespace PDAShell.Main
         {
             closeBtn.Visible = true;
             startScreen.Visible = false;
+            applicationsScreen.Visible = false;
             settingsPanel.Visible = true;
             titleLabel.Text = "Settings";
         }
@@ -69,10 +70,12 @@ namespace PDAShell.Main
                 ApplySettings();
                 // Hide secondary screens
                 ownerInfoSettings.Visible = false;
+                settingsPanel.Visible = true;
             }
             else if (closeBtn.Tag.ToString() == "close")
             {
                 settingsPanel.Visible = false;
+                applicationsScreen.Visible = false;
                 startScreen.Visible = true;
                 closeBtn.Visible = false;
                 titleLabel.Text = "Start";
@@ -98,6 +101,7 @@ namespace PDAShell.Main
                 switch (listView1.FocusedItem.Index)
                 {
                     case 0:
+                        settingsPanel.Visible = false;
                         ownerInfoSettings.Visible = true;
                         closeBtn.Image = Properties.Resources.ok;
                         closeBtn.Tag = "ok";
@@ -121,6 +125,114 @@ namespace PDAShell.Main
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void applicationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closeBtn.Visible = true;
+            startScreen.Visible = false;
+            settingsPanel.Visible = false;
+            applicationsScreen.Visible = true;
+            titleLabel.Text = "Applications";
+        }
+
+        public void showDialog(int dlgWidth, int dlgHeight, string caption, string message, bool showIcon, int iconType, bool showOKBtn, bool showCancelBtn)
+        {
+            Form dialogBox = new Dialogs.DialogBox();
+            dialogBox.Size = new Size(dlgWidth, dlgHeight);
+            foreach (Control control in dialogBox.Controls)
+            {
+                if (control is Panel)
+                {
+                    foreach (Control panelControl in control.Controls)
+                    {
+                        if (panelControl is Label)
+                        {
+                            if (panelControl.Name == "captionLabel") 
+                            {
+                                Label captionLabel = (Label)panelControl;
+                                captionLabel.Text = caption;
+                            }
+                        }
+                        if (panelControl is PictureBox)
+                        {
+                            if (panelControl.Name == "okBtn")
+                            {
+                                panelControl.Visible = showOKBtn;
+                            }
+                            else if (panelControl.Name == "cancelBtn")
+                            {
+                                panelControl.Visible = showCancelBtn;
+                            }
+                        }
+                    }
+                }
+                if (control is TableLayoutPanel)
+                {
+                    foreach (Control tlpControl in control.Controls)
+                    {
+                        if (tlpControl is Label)
+                        {
+                            if (tlpControl.Name == "captionLabel") 
+                            {
+                                Label captionLabel = (Label)tlpControl;
+                                captionLabel.Text = caption;
+                            }
+                            else if (tlpControl.Name == "messageLabel") 
+                            {
+                                Label messageLabel = (Label)tlpControl;
+                                messageLabel.Text = message;
+                            }
+                        }
+                        if (tlpControl is PictureBox)
+                        {
+                            if (tlpControl.Name == "iconPicture")
+                            {
+                                PictureBox icon = (PictureBox)tlpControl;
+                                icon.Visible = showIcon;
+                                switch (iconType)
+                                {
+                                    case 0:
+                                        icon.Image = Properties.Resources.success;
+                                        break;
+                                    case 1:
+                                        icon.Image = Properties.Resources.question;
+                                        break;
+                                    case 2:
+                                        icon.Image = Properties.Resources.information;
+                                        break;
+                                    case 3:
+                                        icon.Image = Properties.Resources.exclamation;
+                                        break;
+                                    case 4:
+                                        icon.Image = Properties.Resources.error;
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            dialogBox.ShowDialog();
+        }
+
+        private void listView3_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            switch (listView3.FocusedItem.Index)
+            {
+                case 8:
+                    showDialog(400, 260, "Other Installed Applications", "We don't know whether these applications can get you distracted.\n\nAre you sure you want to continue?", true, 1, true, true);
+                    Form dialogBox = new Dialogs.DialogBox();
+                    if (dialogBox.DialogResult == System.Windows.Forms.DialogResult.OK)
+                    {
+                        MessageBox.Show("Hello World");
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

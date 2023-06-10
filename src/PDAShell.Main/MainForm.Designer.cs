@@ -29,16 +29,29 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Owner Information", 0);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Password", 1);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Sounds & Notifications", 2);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Personalization", 3);
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Calendar", 7);
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Clock", 5);
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("File Explorer", 8);
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Games", 9);
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Media Player", 10);
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Notes", 11);
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Stopwatch", 12);
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Tasks", 13);
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Other Installed Applications", 14);
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("Useful Websites", 15);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("About", 4);
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Clock & Alarms", 5);
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Screen", 6);
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("Owner Information", 0);
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("Password", 1);
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("Sounds & Notifications", 2);
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("Personalization", 3);
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("About", 4);
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("Clock & Alarms", 5);
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("Screen", 6);
             this.splashScreen = new System.Windows.Forms.Panel();
             this.contentScreen = new System.Windows.Forms.Panel();
+            this.applicationsScreen = new System.Windows.Forms.Panel();
+            this.listView3 = new System.Windows.Forms.ListView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.settingsPanel = new System.Windows.Forms.Panel();
             this.ownerInfoSettings = new System.Windows.Forms.Panel();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -71,7 +84,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.listView2 = new System.Windows.Forms.ListView();
             this.startScreen = new System.Windows.Forms.Panel();
@@ -112,6 +124,7 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contentScreen.SuspendLayout();
+            this.applicationsScreen.SuspendLayout();
             this.settingsPanel.SuspendLayout();
             this.ownerInfoSettings.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -152,6 +165,7 @@
             // 
             // contentScreen
             // 
+            this.contentScreen.Controls.Add(this.applicationsScreen);
             this.contentScreen.Controls.Add(this.settingsPanel);
             this.contentScreen.Controls.Add(this.startScreen);
             this.contentScreen.Controls.Add(this.statusStrip1);
@@ -161,6 +175,61 @@
             this.contentScreen.Name = "contentScreen";
             this.contentScreen.Size = new System.Drawing.Size(1008, 561);
             this.contentScreen.TabIndex = 0;
+            // 
+            // applicationsScreen
+            // 
+            this.applicationsScreen.Controls.Add(this.listView3);
+            this.applicationsScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.applicationsScreen.Location = new System.Drawing.Point(0, 28);
+            this.applicationsScreen.Name = "applicationsScreen";
+            this.applicationsScreen.Size = new System.Drawing.Size(1008, 506);
+            this.applicationsScreen.TabIndex = 4;
+            this.applicationsScreen.Visible = false;
+            // 
+            // listView3
+            // 
+            this.listView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView3.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5,
+            listViewItem6,
+            listViewItem7,
+            listViewItem8,
+            listViewItem9,
+            listViewItem10});
+            this.listView3.LargeImageList = this.imageList1;
+            this.listView3.Location = new System.Drawing.Point(0, 0);
+            this.listView3.MultiSelect = false;
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(1008, 506);
+            this.listView3.TabIndex = 1;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView3_MouseDoubleClick);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "ownerinfo.png");
+            this.imageList1.Images.SetKeyName(1, "password.png");
+            this.imageList1.Images.SetKeyName(2, "sounds.png");
+            this.imageList1.Images.SetKeyName(3, "personalization.png");
+            this.imageList1.Images.SetKeyName(4, "about.png");
+            this.imageList1.Images.SetKeyName(5, "clock.png");
+            this.imageList1.Images.SetKeyName(6, "screen.png");
+            this.imageList1.Images.SetKeyName(7, "calendar.png");
+            this.imageList1.Images.SetKeyName(8, "explorer.png");
+            this.imageList1.Images.SetKeyName(9, "games.png");
+            this.imageList1.Images.SetKeyName(10, "media_player.png");
+            this.imageList1.Images.SetKeyName(11, "notes.png");
+            this.imageList1.Images.SetKeyName(12, "stopwatch.png");
+            this.imageList1.Images.SetKeyName(13, "tasks.png");
+            this.imageList1.Images.SetKeyName(14, "unknown_app.png");
+            this.imageList1.Images.SetKeyName(15, "websites.png");
             // 
             // settingsPanel
             // 
@@ -479,10 +548,10 @@
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4});
+            listViewItem11,
+            listViewItem12,
+            listViewItem13,
+            listViewItem14});
             this.listView1.LargeImageList = this.imageList1;
             this.listView1.Location = new System.Drawing.Point(3, 3);
             this.listView1.MultiSelect = false;
@@ -491,18 +560,6 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "ownerinfo.png");
-            this.imageList1.Images.SetKeyName(1, "password.png");
-            this.imageList1.Images.SetKeyName(2, "sounds.png");
-            this.imageList1.Images.SetKeyName(3, "personalization.png");
-            this.imageList1.Images.SetKeyName(4, "about.png");
-            this.imageList1.Images.SetKeyName(5, "clock.png");
-            this.imageList1.Images.SetKeyName(6, "screen.png");
             // 
             // tabPage2
             // 
@@ -520,9 +577,9 @@
             this.listView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem5,
-            listViewItem6,
-            listViewItem7});
+            listViewItem15,
+            listViewItem16,
+            listViewItem17});
             this.listView2.LargeImageList = this.imageList1;
             this.listView2.Location = new System.Drawing.Point(3, 3);
             this.listView2.MultiSelect = false;
@@ -807,7 +864,7 @@
             this.exitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(154, 220);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(154, 198);
             // 
             // startToolStripMenuItem
             // 
@@ -848,6 +905,7 @@
             this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
             this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.applicationsToolStripMenuItem.Text = "Applications";
+            this.applicationsToolStripMenuItem.Click += new System.EventHandler(this.applicationsToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
@@ -887,6 +945,7 @@
             this.Text = "PDAShell Window";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.contentScreen.ResumeLayout(false);
+            this.applicationsScreen.ResumeLayout(false);
             this.settingsPanel.ResumeLayout(false);
             this.ownerInfoSettings.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
@@ -1002,6 +1061,8 @@
         private System.Windows.Forms.Label usrName;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Panel applicationsScreen;
+        private System.Windows.Forms.ListView listView3;
     }
 }
 

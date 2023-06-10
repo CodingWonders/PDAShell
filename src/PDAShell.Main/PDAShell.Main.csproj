@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dialogs\DialogBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DialogBox.Designer.cs">
+      <DependentUpon>DialogBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -52,6 +58,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialogs\DialogBox.resx">
+      <DependentUpon>DialogBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +116,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\owner_large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dialogs\success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dialogs\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dialogs\exclamation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dialogs\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dialogs\question.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
