@@ -8,18 +8,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Diagnostics;
+using System.Security.Principal;
+using System.Runtime.InteropServices;
+using Shellify;
 
 namespace PDAShell.Main
 {
     public partial class MainForm : Form
     {
 
-        public string ownerName;
-        public string ownerCompany;
-        public string ownerAddress;
-        public string ownerPhone;
-        public string ownerEmail;
+        public static string ownerName { get; set; }
+        public static string ownerCompany { get; set; }
+        public static string ownerAddress { get; set; }
+        public static string ownerPhone { get; set; }
+        public static string ownerEmail { get; set; }
         public static bool isAccepted { get; set; }
+
+        public static List<string> shortcutExecutionPaths { get; set; } = new List<string>();
+        public static List<string> shortcutWorkingDirectories { get; set; } = new List<string>();
+        public static List<string> shortcutArguments { get; set; } = new List<string>();
+        public static ImageList shortcutIconList { get; set; } = new ImageList();
+        private static ListViewItem appItem { get; set; }
+
+        public class NativeMethods
+        {
+            [DllImport("shell32.dll", CharSet = CharSet.Auto)]
+            public static extern uint ExtractIconEx(string lpszFile, int nIconIndex, [Out] IntPtr[] phiconLarge, [Out] IntPtr[] phiconSmall, [In] uint nIcons);
+        }
 
         public MainForm()
         {
@@ -230,6 +247,8 @@ namespace PDAShell.Main
                         apps_mainScreen.Visible = false;
                         otherApps.Visible = true;
                         usefulWebsites.Visible = false;
+                        listView4.Items.Clear();
+                        appListerBW.RunWorkerAsync();
                     }
                     break;
                 case 9:
@@ -260,6 +279,113 @@ namespace PDAShell.Main
                 apps_mainScreen.Visible = true;
                 return;
             }
+            else
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = shortcutExecutionPaths[listView4.FocusedItem.Index];
+                process.StartInfo.WorkingDirectory = shortcutWorkingDirectories[listView4.FocusedItem.Index];
+                process.StartInfo.Arguments = shortcutArguments[listView4.FocusedItem.Index];
+                process.Start();
+            }
+        }
+
+        private void appListerBW_DoWork(object sender, DoWorkEventArgs e)
+        {
+            appListerBW.ReportProgress(0);
+            if (shortcutIconList.Images.Count > 0) { shortcutIconList.Images.Clear(); }
+            shortcutIconList.ImageSize = new Size(48, 48);
+            shortcutExecutionPaths.Clear();
+            shortcutWorkingDirectories.Clear();
+            shortcutArguments.Clear();
+            WindowsIdentity id = WindowsIdentity.GetCurrent();
+            WindowsPrincipal pri = new WindowsPrincipal(id);
+            string lookupPath = "";
+            if (pri.IsInRole(WindowsBuiltInRole.Administrator))
+            {
+                lookupPath = Path.GetPathRoot(Environment.GetFolderPath(Environment.SpecialFolder.Windows)) + "\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs";
+            }
+            else
+            {
+                lookupPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs";
+            }
+            foreach (var item in Directory.GetFiles(lookupPath, "*.lnk", SearchOption.AllDirectories))
+            {
+                string shortcutPath = "";
+                string shortcutWorkingDir = "";
+                string shortcutArgs = "";
+                try
+                {
+                    var shortcut = ShellLinkFile.Load(item);
+                    shortcutPath = Path.GetPathRoot(Environment.GetFolderPath(Environment.SpecialFolder.Windows)) + shortcut.RelativePath.Replace("..\\", "").Trim();
+                    shortcutWorkingDir = shortcut.WorkingDirectory;
+                    shortcutArgs = shortcut.Arguments;
+                    shortcutExecutionPaths.Add(shortcutPath);
+                    shortcutWorkingDirectories.Add(shortcutWorkingDir);
+                    shortcutArguments.Add(shortcutArgs);
+                    try
+                    {
+                        if (shortcut.IconLocation is null)
+                        {
+                            shortcutIconList.Images.Add(Properties.Resources.shortcut);
+                        }
+                        else if (Path.GetExtension(shortcut.IconLocation) == ".exe")
+                        {
+                            uint iconCount = NativeMethods.ExtractIconEx(shortcut.IconLocation, -1, null, null, 0);
+                            IntPtr[] largeIcons = new IntPtr[iconCount];
+                            IntPtr[] smallIcons = new IntPtr[iconCount];
+                            NativeMethods.ExtractIconEx(shortcut.IconLocation, 0, largeIcons, smallIcons, iconCount);
+                            for (int i = 0; i < iconCount; i++)
+                            {
+                                Icon icon = Icon.FromHandle(largeIcons[i]);
+                                shortcutIconList.Images.Add(icon.ToBitmap());
+                            }
+                        }
+                        else
+                        {
+                            shortcutIconList.Images.Add(Image.FromFile(shortcut.IconLocation));
+                        }
+                    }
+                    catch (OutOfMemoryException)
+                    {
+                        shortcutIconList.Images.Add(Properties.Resources.shortcut);
+                    }
+                    appItem = new ListViewItem(Path.GetFileNameWithoutExtension(item), shortcutIconList.Images.Count - 1);
+                    appListerBW.ReportProgress(50);
+                }
+                catch (Exception)
+                {
+                    shortcutExecutionPaths.Remove(shortcutPath);
+                    shortcutWorkingDirectories.Remove(shortcutWorkingDir);
+                    shortcutArguments.Remove(shortcutArgs);
+                    continue;
+                }
+            }
+            shortcutIconList.Images.Add(imageList1.Images[17]);
+            appListerBW.ReportProgress(90);
+        }
+
+        private void appListerBW_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            if (e.ProgressPercentage == 0)
+            {
+                closeBtn.Visible = false;
+                listView4.Items.Clear();
+                listView4.LargeImageList = shortcutIconList;
+            }
+            else if (e.ProgressPercentage == 90)
+            {
+                var backItem = new ListViewItem("Back", shortcutIconList.Images.Count - 1);
+                listView4.Items.Add(backItem);
+            }
+            else
+            {
+                listView4.Items.Add(appItem);
+            }
+        }
+
+        private void appListerBW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            closeBtn.Visible = true;
         }
     }
 }
