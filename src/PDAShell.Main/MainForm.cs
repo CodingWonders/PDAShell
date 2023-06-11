@@ -288,7 +288,14 @@ namespace PDAShell.Main
                 {
                     Process process = new Process();
                     process.StartInfo.FileName = shortcutExecutionPaths[listView4.FocusedItem.Index];
-                    process.StartInfo.WorkingDirectory = shortcutWorkingDirectories[listView4.FocusedItem.Index];
+                    if (shortcutWorkingDirectories[listView4.FocusedItem.Index] is null)
+                    {
+                        process.StartInfo.WorkingDirectory = Path.GetDirectoryName(shortcutExecutionPaths[listView4.FocusedItem.Index]);
+                    }
+                    else
+                    {
+                        process.StartInfo.WorkingDirectory = shortcutWorkingDirectories[listView4.FocusedItem.Index];
+                    }
                     process.StartInfo.Arguments = shortcutArguments[listView4.FocusedItem.Index];
                     process.Start();
                 }
@@ -304,6 +311,7 @@ namespace PDAShell.Main
             appListerBW.ReportProgress(0);
             if (shortcutIconList.Images.Count > 0) { shortcutIconList.Images.Clear(); }
             shortcutIconList.ImageSize = new Size(48, 48);
+            shortcutIconList.ColorDepth = ColorDepth.Depth32Bit;
             shortcutExecutionPaths.Clear();
             shortcutWorkingDirectories.Clear();
             shortcutArguments.Clear();
