@@ -172,15 +172,18 @@ namespace PDAShell.Main
                                 captionLabel.Text = caption;
                             }
                         }
-                        if (panelControl is PictureBox)
+                        if (panelControl is Panel)
                         {
-                            if (panelControl.Name == "okBtn")
+                            foreach (Control subPanelControl in panelControl.Controls)
                             {
-                                panelControl.Visible = showOKBtn;
-                            }
-                            else if (panelControl.Name == "cancelBtn")
-                            {
-                                panelControl.Visible = showCancelBtn;
+                                if (subPanelControl.Name == "okBtn")
+                                {
+                                    subPanelControl.Visible = showOKBtn;
+                                }
+                                else if (subPanelControl.Name == "cancelBtn")
+                                {
+                                    subPanelControl.Visible = showCancelBtn;
+                                }
                             }
                         }
                     }
@@ -233,7 +236,7 @@ namespace PDAShell.Main
                     }
                 }
             }
-            dialogBox.ShowDialog();
+            dialogBox.ShowDialog(this);
         }
 
         private void listView3_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -241,7 +244,7 @@ namespace PDAShell.Main
             switch (listView3.FocusedItem.Index)
             {
                 case 8:
-                    showDialog(400, 260, "Other Installed Applications", "We don't know whether these applications can get you distracted.\n\nAre you sure you want to continue?", true, 1, true, true);
+                    showDialog(400, 196, "Other Installed Applications", "We don't know whether these applications can get you distracted.\n\nAre you sure you want to continue?", true, 1, true, true);
                     if (isAccepted)
                     {
                         apps_mainScreen.Visible = false;
@@ -281,11 +284,18 @@ namespace PDAShell.Main
             }
             else
             {
-                Process process = new Process();
-                process.StartInfo.FileName = shortcutExecutionPaths[listView4.FocusedItem.Index];
-                process.StartInfo.WorkingDirectory = shortcutWorkingDirectories[listView4.FocusedItem.Index];
-                process.StartInfo.Arguments = shortcutArguments[listView4.FocusedItem.Index];
-                process.Start();
+                try
+                {
+                    Process process = new Process();
+                    process.StartInfo.FileName = shortcutExecutionPaths[listView4.FocusedItem.Index];
+                    process.StartInfo.WorkingDirectory = shortcutWorkingDirectories[listView4.FocusedItem.Index];
+                    process.StartInfo.Arguments = shortcutArguments[listView4.FocusedItem.Index];
+                    process.Start();
+                }
+                catch (Exception ex)
+                {
+                    showDialog(640, 240, "Error launching application", "An error occurred when starting up this application.\n\n" + listView4.FocusedItem.Text + " (" + Path.GetFileName(shortcutExecutionPaths[listView4.FocusedItem.Index]) + ")\n\n" + ex.Message, true, 4, false, true);
+                }
             }
         }
 
