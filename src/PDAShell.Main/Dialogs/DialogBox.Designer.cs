@@ -31,16 +31,16 @@
             this.statusBar = new System.Windows.Forms.Panel();
             this.captionLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.messageLabel = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.okBtn = new System.Windows.Forms.PictureBox();
             this.cancelBtn = new System.Windows.Forms.PictureBox();
+            this.messageLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.iconPicture = new System.Windows.Forms.PictureBox();
             this.statusBar.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.okBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cancelBtn)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,12 +58,13 @@
             // 
             // captionLabel
             // 
+            this.captionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.captionLabel.AutoEllipsis = true;
-            this.captionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.captionLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.captionLabel.Location = new System.Drawing.Point(0, 0);
+            this.captionLabel.Location = new System.Drawing.Point(4, 0);
             this.captionLabel.Name = "captionLabel";
-            this.captionLabel.Size = new System.Drawing.Size(256, 28);
+            this.captionLabel.Size = new System.Drawing.Size(252, 28);
             this.captionLabel.TabIndex = 2;
             this.captionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -77,32 +78,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(64, 28);
             this.panel1.TabIndex = 1;
-            // 
-            // messageLabel
-            // 
-            this.messageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.messageLabel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.messageLabel.Location = new System.Drawing.Point(77, 0);
-            this.messageLabel.Name = "messageLabel";
-            this.messageLabel.Size = new System.Drawing.Size(216, 197);
-            this.messageLabel.TabIndex = 2;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel1.Controls.Add(this.messageLabel, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.iconPicture, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 34);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(296, 197);
-            this.tableLayoutPanel1.TabIndex = 3;
             // 
             // okBtn
             // 
@@ -129,6 +104,32 @@
             this.cancelBtn.TabStop = false;
             this.cancelBtn.Tag = "close";
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
+            // messageLabel
+            // 
+            this.messageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.messageLabel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messageLabel.Location = new System.Drawing.Point(77, 0);
+            this.messageLabel.Name = "messageLabel";
+            this.messageLabel.Size = new System.Drawing.Size(216, 197);
+            this.messageLabel.TabIndex = 2;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel1.Controls.Add(this.messageLabel, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.iconPicture, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 34);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(296, 197);
+            this.tableLayoutPanel1.TabIndex = 3;
             // 
             // iconPicture
             // 
@@ -157,10 +158,10 @@
             this.statusBar.ResumeLayout(false);
             this.statusBar.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.okBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cancelBtn)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPicture)).EndInit();
             this.ResumeLayout(false);
 
