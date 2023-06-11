@@ -62,6 +62,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.captionLabel.AutoEllipsis = true;
             this.captionLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.captionLabel.ForeColor = System.Drawing.Color.White;
             this.captionLabel.Location = new System.Drawing.Point(4, 0);
             this.captionLabel.Name = "captionLabel";
             this.captionLabel.Size = new System.Drawing.Size(252, 28);
@@ -120,8 +121,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.messageLabel, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.iconPicture, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 34);
@@ -153,6 +154,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DialogBox";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DialogBox";
             this.statusBar.ResumeLayout(false);
