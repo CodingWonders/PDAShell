@@ -29,17 +29,49 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Owner Information", 0);
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Password", 1);
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Sounds & Notifications", 2);
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Personalization", 3);
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Calendar", 7);
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Clock", 5);
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("File Explorer", 8);
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Games", 9);
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Media Player", 10);
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Notes", 11);
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Stopwatch", 12);
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Tasks", 13);
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Other Installed Applications", 14);
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("Useful Websites", 15);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("About", 4);
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Clock & Alarms", 5);
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("Screen", 6);
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("Wikipedia", 15);
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("National Geographic", 15);
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("The New York Times", 15);
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("Add...", 16);
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("Back", 17);
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("Back", 17);
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("Owner Information", 0);
+            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem("Password", 1);
+            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem("Sounds & Notifications", 2);
+            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem("Personalization", 3);
+            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem("About", 4);
+            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem("Clock & Alarms", 5);
+            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem("Screen", 6);
             this.splashScreen = new System.Windows.Forms.Panel();
             this.contentScreen = new System.Windows.Forms.Panel();
+            this.applicationsScreen = new System.Windows.Forms.Panel();
+            this.apps_mainScreen = new System.Windows.Forms.Panel();
+            this.listView3 = new System.Windows.Forms.ListView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.usefulWebsites = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.listView5 = new System.Windows.Forms.ListView();
+            this.otherApps = new System.Windows.Forms.Panel();
+            this.listView4 = new System.Windows.Forms.ListView();
             this.settingsPanel = new System.Windows.Forms.Panel();
+            this.settings_mainScreen = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.listView2 = new System.Windows.Forms.ListView();
             this.ownerInfoSettings = new System.Windows.Forms.Panel();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.idTab = new System.Windows.Forms.TabPage();
@@ -61,35 +93,12 @@
             this.usrAddress = new System.Windows.Forms.Label();
             this.usrCompany = new System.Windows.Forms.Label();
             this.usrName = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.notesTab = new System.Windows.Forms.TabPage();
             this.infoOptionsTab = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
             this.headerLabel1 = new System.Windows.Forms.Label();
-            this.mainScreen = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.statusBar = new System.Windows.Forms.Panel();
-            this.titleLabel = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.clockLabel = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.calendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.notesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.applicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.startScreen = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -103,30 +112,49 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dateLbl = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.appointmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.taskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusBar = new System.Windows.Forms.Panel();
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.closeBtn = new System.Windows.Forms.PictureBox();
+            this.clockLabel = new System.Windows.Forms.Label();
             this.shellBtn = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.notesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.applicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.appListerBW = new System.ComponentModel.BackgroundWorker();
             this.contentScreen.SuspendLayout();
+            this.applicationsScreen.SuspendLayout();
+            this.apps_mainScreen.SuspendLayout();
+            this.usefulWebsites.SuspendLayout();
+            this.otherApps.SuspendLayout();
             this.settingsPanel.SuspendLayout();
+            this.settings_mainScreen.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.ownerInfoSettings.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.idTab.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.mainScreen.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
-            this.statusBar.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panel6.SuspendLayout();
             this.startScreen.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -136,8 +164,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
+            this.statusBar.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shellBtn)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splashScreen
@@ -150,6 +182,7 @@
             // 
             // contentScreen
             // 
+            this.contentScreen.Controls.Add(this.applicationsScreen);
             this.contentScreen.Controls.Add(this.settingsPanel);
             this.contentScreen.Controls.Add(this.startScreen);
             this.contentScreen.Controls.Add(this.statusStrip1);
@@ -160,16 +193,246 @@
             this.contentScreen.Size = new System.Drawing.Size(1008, 561);
             this.contentScreen.TabIndex = 0;
             // 
+            // applicationsScreen
+            // 
+            this.applicationsScreen.Controls.Add(this.apps_mainScreen);
+            this.applicationsScreen.Controls.Add(this.usefulWebsites);
+            this.applicationsScreen.Controls.Add(this.otherApps);
+            this.applicationsScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.applicationsScreen.Location = new System.Drawing.Point(0, 28);
+            this.applicationsScreen.Name = "applicationsScreen";
+            this.applicationsScreen.Size = new System.Drawing.Size(1008, 506);
+            this.applicationsScreen.TabIndex = 4;
+            this.applicationsScreen.Visible = false;
+            // 
+            // apps_mainScreen
+            // 
+            this.apps_mainScreen.Controls.Add(this.listView3);
+            this.apps_mainScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.apps_mainScreen.Location = new System.Drawing.Point(0, 0);
+            this.apps_mainScreen.Name = "apps_mainScreen";
+            this.apps_mainScreen.Size = new System.Drawing.Size(1008, 506);
+            this.apps_mainScreen.TabIndex = 2;
+            // 
+            // listView3
+            // 
+            this.listView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView3.HideSelection = false;
+            this.listView3.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5,
+            listViewItem6,
+            listViewItem7,
+            listViewItem8,
+            listViewItem9,
+            listViewItem10});
+            this.listView3.LargeImageList = this.imageList1;
+            this.listView3.Location = new System.Drawing.Point(0, 0);
+            this.listView3.MultiSelect = false;
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(1008, 506);
+            this.listView3.TabIndex = 1;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView3_MouseDoubleClick);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "ownerinfo.png");
+            this.imageList1.Images.SetKeyName(1, "password.png");
+            this.imageList1.Images.SetKeyName(2, "sounds.png");
+            this.imageList1.Images.SetKeyName(3, "personalization.png");
+            this.imageList1.Images.SetKeyName(4, "about.png");
+            this.imageList1.Images.SetKeyName(5, "clock.png");
+            this.imageList1.Images.SetKeyName(6, "screen.png");
+            this.imageList1.Images.SetKeyName(7, "calendar.png");
+            this.imageList1.Images.SetKeyName(8, "explorer.png");
+            this.imageList1.Images.SetKeyName(9, "games.png");
+            this.imageList1.Images.SetKeyName(10, "media_player.png");
+            this.imageList1.Images.SetKeyName(11, "notes.png");
+            this.imageList1.Images.SetKeyName(12, "stopwatch.png");
+            this.imageList1.Images.SetKeyName(13, "tasks.png");
+            this.imageList1.Images.SetKeyName(14, "unknown_app.png");
+            this.imageList1.Images.SetKeyName(15, "websites.png");
+            this.imageList1.Images.SetKeyName(16, "add_website.png");
+            this.imageList1.Images.SetKeyName(17, "goback.png");
+            // 
+            // usefulWebsites
+            // 
+            this.usefulWebsites.Controls.Add(this.label11);
+            this.usefulWebsites.Controls.Add(this.label10);
+            this.usefulWebsites.Controls.Add(this.listView5);
+            this.usefulWebsites.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.usefulWebsites.Location = new System.Drawing.Point(0, 0);
+            this.usefulWebsites.Name = "usefulWebsites";
+            this.usefulWebsites.Size = new System.Drawing.Size(1008, 506);
+            this.usefulWebsites.TabIndex = 2;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label11.Location = new System.Drawing.Point(20, 392);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(449, 40);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "These websites contain resources useful for your investigations.";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semilight", 48F);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label10.Location = new System.Drawing.Point(3, 419);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(471, 86);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Useful Websites";
+            // 
+            // listView5
+            // 
+            this.listView5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView5.HideSelection = false;
+            this.listView5.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem11,
+            listViewItem12,
+            listViewItem13,
+            listViewItem14,
+            listViewItem15});
+            this.listView5.LargeImageList = this.imageList1;
+            this.listView5.Location = new System.Drawing.Point(0, 0);
+            this.listView5.MultiSelect = false;
+            this.listView5.Name = "listView5";
+            this.listView5.Size = new System.Drawing.Size(1008, 506);
+            this.listView5.TabIndex = 2;
+            this.listView5.UseCompatibleStateImageBehavior = false;
+            this.listView5.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView5_MouseDoubleClick);
+            // 
+            // otherApps
+            // 
+            this.otherApps.Controls.Add(this.listView4);
+            this.otherApps.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.otherApps.Location = new System.Drawing.Point(0, 0);
+            this.otherApps.Name = "otherApps";
+            this.otherApps.Size = new System.Drawing.Size(1008, 506);
+            this.otherApps.TabIndex = 3;
+            // 
+            // listView4
+            // 
+            this.listView4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView4.HideSelection = false;
+            this.listView4.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem16});
+            this.listView4.LargeImageList = this.imageList1;
+            this.listView4.Location = new System.Drawing.Point(0, 0);
+            this.listView4.MultiSelect = false;
+            this.listView4.Name = "listView4";
+            this.listView4.Size = new System.Drawing.Size(1008, 506);
+            this.listView4.TabIndex = 2;
+            this.listView4.UseCompatibleStateImageBehavior = false;
+            this.listView4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView4_MouseDoubleClick);
+            // 
             // settingsPanel
             // 
+            this.settingsPanel.Controls.Add(this.settings_mainScreen);
             this.settingsPanel.Controls.Add(this.ownerInfoSettings);
-            this.settingsPanel.Controls.Add(this.mainScreen);
             this.settingsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.settingsPanel.Location = new System.Drawing.Point(0, 28);
             this.settingsPanel.Name = "settingsPanel";
             this.settingsPanel.Size = new System.Drawing.Size(1008, 506);
             this.settingsPanel.TabIndex = 3;
             this.settingsPanel.Visible = false;
+            // 
+            // settings_mainScreen
+            // 
+            this.settings_mainScreen.Controls.Add(this.tabControl1);
+            this.settings_mainScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.settings_mainScreen.Location = new System.Drawing.Point(0, 0);
+            this.settings_mainScreen.Name = "settings_mainScreen";
+            this.settings_mainScreen.Size = new System.Drawing.Size(1008, 506);
+            this.settings_mainScreen.TabIndex = 1;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1008, 506);
+            this.tabControl1.TabIndex = 1;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.listView1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 4);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1000, 480);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Personal";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // listView1
+            // 
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView1.HideSelection = false;
+            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem17,
+            listViewItem18,
+            listViewItem19,
+            listViewItem20});
+            this.listView1.LargeImageList = this.imageList1;
+            this.listView1.Location = new System.Drawing.Point(3, 3);
+            this.listView1.MultiSelect = false;
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(994, 474);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.listView2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 4);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1000, 480);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "System";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // listView2
+            // 
+            this.listView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView2.HideSelection = false;
+            this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem21,
+            listViewItem22,
+            listViewItem23});
+            this.listView2.LargeImageList = this.imageList1;
+            this.listView2.Location = new System.Drawing.Point(3, 3);
+            this.listView2.MultiSelect = false;
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(994, 474);
+            this.listView2.TabIndex = 1;
+            this.listView2.UseCompatibleStateImageBehavior = false;
             // 
             // ownerInfoSettings
             // 
@@ -180,7 +443,6 @@
             this.ownerInfoSettings.Name = "ownerInfoSettings";
             this.ownerInfoSettings.Size = new System.Drawing.Size(1008, 506);
             this.ownerInfoSettings.TabIndex = 1;
-            this.ownerInfoSettings.Visible = false;
             // 
             // tabControl2
             // 
@@ -381,6 +643,16 @@
             this.usrName.Text = "Owner";
             this.usrName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::PDAShell.Main.Properties.Resources.owner_large;
+            this.pictureBox5.Location = new System.Drawing.Point(36, 36);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox5.TabIndex = 2;
+            this.pictureBox5.TabStop = false;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -429,235 +701,6 @@
             this.headerLabel1.TabIndex = 3;
             this.headerLabel1.Text = "Owner Information";
             this.headerLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // mainScreen
-            // 
-            this.mainScreen.Controls.Add(this.tabControl1);
-            this.mainScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainScreen.Location = new System.Drawing.Point(0, 0);
-            this.mainScreen.Name = "mainScreen";
-            this.mainScreen.Size = new System.Drawing.Size(1008, 506);
-            this.mainScreen.TabIndex = 1;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1008, 506);
-            this.tabControl1.TabIndex = 1;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.listView1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 4);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1000, 480);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Personal";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // listView1
-            // 
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem4,
-            listViewItem5,
-            listViewItem6,
-            listViewItem7});
-            this.listView1.LargeImageList = this.imageList1;
-            this.listView1.Location = new System.Drawing.Point(3, 3);
-            this.listView1.MultiSelect = false;
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(994, 474);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "ownerinfo.png");
-            this.imageList1.Images.SetKeyName(1, "password.png");
-            this.imageList1.Images.SetKeyName(2, "sounds.png");
-            this.imageList1.Images.SetKeyName(3, "personalization.png");
-            this.imageList1.Images.SetKeyName(4, "about.png");
-            this.imageList1.Images.SetKeyName(5, "clock.png");
-            this.imageList1.Images.SetKeyName(6, "screen.png");
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.listView2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1000, 480);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "System";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // listView2
-            // 
-            this.listView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem8,
-            listViewItem9,
-            listViewItem10});
-            this.listView2.LargeImageList = this.imageList1;
-            this.listView2.Location = new System.Drawing.Point(3, 3);
-            this.listView2.MultiSelect = false;
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(994, 474);
-            this.listView2.TabIndex = 1;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.AutoSize = false;
-            this.statusStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButton1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 534);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1008, 27);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // statusBar
-            // 
-            this.statusBar.Controls.Add(this.titleLabel);
-            this.statusBar.Controls.Add(this.panel1);
-            this.statusBar.Controls.Add(this.shellBtn);
-            this.statusBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.statusBar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusBar.Location = new System.Drawing.Point(0, 0);
-            this.statusBar.Name = "statusBar";
-            this.statusBar.Size = new System.Drawing.Size(1008, 28);
-            this.statusBar.TabIndex = 0;
-            // 
-            // titleLabel
-            // 
-            this.titleLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.titleLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(32, 0);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(820, 28);
-            this.titleLabel.TabIndex = 2;
-            this.titleLabel.Text = "Start";
-            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.closeBtn);
-            this.panel1.Controls.Add(this.clockLabel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(852, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(156, 28);
-            this.panel1.TabIndex = 1;
-            // 
-            // clockLabel
-            // 
-            this.clockLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clockLabel.Location = new System.Drawing.Point(0, 0);
-            this.clockLabel.Name = "clockLabel";
-            this.clockLabel.Size = new System.Drawing.Size(121, 28);
-            this.clockLabel.TabIndex = 0;
-            this.clockLabel.Text = "label1";
-            this.clockLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.startToolStripMenuItem,
-            this.calendarToolStripMenuItem,
-            this.notesToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.tasksToolStripMenuItem,
-            this.toolStripSeparator2,
-            this.applicationsToolStripMenuItem,
-            this.settingsToolStripMenuItem,
-            this.helpToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(154, 170);
-            // 
-            // startToolStripMenuItem
-            // 
-            this.startToolStripMenuItem.Name = "startToolStripMenuItem";
-            this.startToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.startToolStripMenuItem.Text = "Start";
-            // 
-            // calendarToolStripMenuItem
-            // 
-            this.calendarToolStripMenuItem.Name = "calendarToolStripMenuItem";
-            this.calendarToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.calendarToolStripMenuItem.Text = "Calendar";
-            // 
-            // notesToolStripMenuItem
-            // 
-            this.notesToolStripMenuItem.Name = "notesToolStripMenuItem";
-            this.notesToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.notesToolStripMenuItem.Text = "Notes";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(150, 6);
-            // 
-            // tasksToolStripMenuItem
-            // 
-            this.tasksToolStripMenuItem.Name = "tasksToolStripMenuItem";
-            this.tasksToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.tasksToolStripMenuItem.Text = "Tasks";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(150, 6);
-            // 
-            // applicationsToolStripMenuItem
-            // 
-            this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
-            this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.applicationsToolStripMenuItem.Text = "Applications";
-            // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::PDAShell.Main.Properties.Resources.owner_large;
-            this.pictureBox5.Location = new System.Drawing.Point(36, 36);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox5.TabIndex = 2;
-            this.pictureBox5.TabStop = false;
             // 
             // startScreen
             // 
@@ -797,6 +840,18 @@
             this.dateLbl.TabIndex = 0;
             this.dateLbl.Text = "<date>";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.AutoSize = false;
+            this.statusStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 534);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1008, 27);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
             // toolStripDropDownButton1
             // 
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -808,7 +863,7 @@
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.ShowDropDownArrow = false;
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(39, 21);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(39, 25);
             this.toolStripDropDownButton1.Text = "New";
             // 
             // appointmentToolStripMenuItem
@@ -832,6 +887,39 @@
             this.taskToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.taskToolStripMenuItem.Text = "Task";
             // 
+            // statusBar
+            // 
+            this.statusBar.Controls.Add(this.titleLabel);
+            this.statusBar.Controls.Add(this.panel1);
+            this.statusBar.Controls.Add(this.shellBtn);
+            this.statusBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.statusBar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusBar.Location = new System.Drawing.Point(0, 0);
+            this.statusBar.Name = "statusBar";
+            this.statusBar.Size = new System.Drawing.Size(1008, 28);
+            this.statusBar.TabIndex = 0;
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.titleLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Location = new System.Drawing.Point(32, 0);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(820, 28);
+            this.titleLabel.TabIndex = 2;
+            this.titleLabel.Text = "Start";
+            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.closeBtn);
+            this.panel1.Controls.Add(this.clockLabel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(852, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(156, 28);
+            this.panel1.TabIndex = 1;
+            // 
             // closeBtn
             // 
             this.closeBtn.Dock = System.Windows.Forms.DockStyle.Right;
@@ -846,6 +934,16 @@
             this.closeBtn.Visible = false;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
+            // clockLabel
+            // 
+            this.clockLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clockLabel.Location = new System.Drawing.Point(0, 0);
+            this.clockLabel.Name = "clockLabel";
+            this.clockLabel.Size = new System.Drawing.Size(121, 28);
+            this.clockLabel.TabIndex = 0;
+            this.clockLabel.Text = "label1";
+            this.clockLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // shellBtn
             // 
             this.shellBtn.Dock = System.Windows.Forms.DockStyle.Left;
@@ -858,6 +956,104 @@
             this.shellBtn.TabStop = false;
             this.shellBtn.Click += new System.EventHandler(this.shellBtn_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.startToolStripMenuItem,
+            this.calendarToolStripMenuItem,
+            this.notesToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.tasksToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.applicationsToolStripMenuItem,
+            this.settingsToolStripMenuItem,
+            this.helpToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.exitToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.contextMenuStrip1.Size = new System.Drawing.Size(154, 198);
+            // 
+            // startToolStripMenuItem
+            // 
+            this.startToolStripMenuItem.Name = "startToolStripMenuItem";
+            this.startToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.startToolStripMenuItem.Text = "Start";
+            // 
+            // calendarToolStripMenuItem
+            // 
+            this.calendarToolStripMenuItem.Name = "calendarToolStripMenuItem";
+            this.calendarToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.calendarToolStripMenuItem.Text = "Calendar";
+            // 
+            // notesToolStripMenuItem
+            // 
+            this.notesToolStripMenuItem.Name = "notesToolStripMenuItem";
+            this.notesToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.notesToolStripMenuItem.Text = "Notes";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(150, 6);
+            // 
+            // tasksToolStripMenuItem
+            // 
+            this.tasksToolStripMenuItem.Name = "tasksToolStripMenuItem";
+            this.tasksToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.tasksToolStripMenuItem.Text = "Tasks";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(150, 6);
+            // 
+            // applicationsToolStripMenuItem
+            // 
+            this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
+            this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.applicationsToolStripMenuItem.Text = "Applications";
+            this.applicationsToolStripMenuItem.Click += new System.EventHandler(this.applicationsToolStripMenuItem_Click);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(150, 6);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // appListerBW
+            // 
+            this.appListerBW.WorkerReportsProgress = true;
+            this.appListerBW.WorkerSupportsCancellation = true;
+            this.appListerBW.DoWork += new System.ComponentModel.DoWorkEventHandler(this.appListerBW_DoWork);
+            this.appListerBW.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.appListerBW_ProgressChanged);
+            this.appListerBW.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.appListerBW_RunWorkerCompleted);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -865,13 +1061,23 @@
             this.ClientSize = new System.Drawing.Size(1008, 561);
             this.Controls.Add(this.contentScreen);
             this.Controls.Add(this.splashScreen);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PDAShell Window";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.contentScreen.ResumeLayout(false);
+            this.applicationsScreen.ResumeLayout(false);
+            this.apps_mainScreen.ResumeLayout(false);
+            this.usefulWebsites.ResumeLayout(false);
+            this.usefulWebsites.PerformLayout();
+            this.otherApps.ResumeLayout(false);
             this.settingsPanel.ResumeLayout(false);
+            this.settings_mainScreen.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ownerInfoSettings.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.idTab.ResumeLayout(false);
@@ -880,17 +1086,8 @@
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.mainScreen.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            this.statusBar.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panel6.ResumeLayout(false);
             this.startScreen.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -904,8 +1101,13 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            this.statusBar.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.shellBtn)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -950,7 +1152,7 @@
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.Panel settingsPanel;
-        private System.Windows.Forms.Panel mainScreen;
+        private System.Windows.Forms.Panel settings_mainScreen;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -984,6 +1186,18 @@
         private System.Windows.Forms.Label usrAddress;
         private System.Windows.Forms.Label usrCompany;
         private System.Windows.Forms.Label usrName;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Panel applicationsScreen;
+        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.Panel otherApps;
+        private System.Windows.Forms.ListView listView4;
+        private System.Windows.Forms.Panel apps_mainScreen;
+        private System.Windows.Forms.Panel usefulWebsites;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ListView listView5;
+        private System.ComponentModel.BackgroundWorker appListerBW;
     }
 }
 
