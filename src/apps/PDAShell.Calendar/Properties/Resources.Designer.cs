@@ -73,6 +73,16 @@ namespace PDAShell.Calendar.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap line_break {
+            get {
+                object obj = ResourceManager.GetObject("line_break", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap next_month {
             get {
                 object obj = ResourceManager.GetObject("next_month", resourceCulture);
@@ -136,6 +146,16 @@ namespace PDAShell.Calendar.Properties {
         internal static System.Drawing.Bitmap today {
             get {
                 object obj = ResourceManager.GetObject("today", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap word_wrap {
+            get {
+                object obj = ResourceManager.GetObject("word_wrap", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
