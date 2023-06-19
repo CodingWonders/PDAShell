@@ -66,7 +66,15 @@ namespace PDAShell.Calendar
 
         private void prevMonth_Click(object sender, EventArgs e)
         {
-            monthCalendar1.SelectionStart = new DateTime(monthCalendar1.SelectionStart.Year, monthCalendar1.SelectionStart.Month - 1, monthCalendar1.SelectionStart.Day);
+            if (monthCalendar1.SelectionStart.Month == 1)
+            {
+                monthCalendar1.SelectionStart = new DateTime(monthCalendar1.SelectionStart.Year - 1, 12, monthCalendar1.SelectionStart.Day);
+            }
+            else
+            {
+                monthCalendar1.SelectionStart = new DateTime(monthCalendar1.SelectionStart.Year, monthCalendar1.SelectionStart.Month - 1, monthCalendar1.SelectionStart.Day);
+            }
+
         }
 
         private void todayPic_Click(object sender, EventArgs e)
@@ -76,7 +84,14 @@ namespace PDAShell.Calendar
 
         private void nextMonth_Click(object sender, EventArgs e)
         {
-            monthCalendar1.SelectionStart = new DateTime(monthCalendar1.SelectionStart.Year, monthCalendar1.SelectionStart.Month + 1, monthCalendar1.SelectionStart.Day);
+            if (monthCalendar1.SelectionStart.Month == 12)
+            {
+                monthCalendar1.SelectionStart = new DateTime(monthCalendar1.SelectionStart.Year + 1, 1, monthCalendar1.SelectionStart.Day);
+            }
+            else
+            {
+                monthCalendar1.SelectionStart = new DateTime(monthCalendar1.SelectionStart.Year, monthCalendar1.SelectionStart.Month + 1, monthCalendar1.SelectionStart.Day);
+            }
         }
 
         private void nextYear_Click(object sender, EventArgs e)
