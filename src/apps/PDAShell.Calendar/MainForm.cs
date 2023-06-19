@@ -198,6 +198,7 @@ namespace PDAShell.Calendar
             prevEventName = "";
             calendarView.Visible = false;
             editEvt.Visible = true;
+            closeBtn.Visible = false;
         }
 
         private void ok_Btn_Click(object sender, EventArgs e)
@@ -240,6 +241,19 @@ namespace PDAShell.Calendar
             }
             editEvt.Visible = false;
             calendarView.Visible = true;
+            closeBtn.Visible = true;
+        }
+
+        private void cancel_Btn_Click(object sender, EventArgs e)
+        {
+            editEvt.Visible = false;
+            calendarView.Visible = true;
+            closeBtn.Visible = true;
+        }
+
+        private void evtTextWordWrap_CheckedChanged(object sender, EventArgs e)
+        {
+            evtDescText.WordWrap = wrapToggle.Checked;
         }
     }
 }

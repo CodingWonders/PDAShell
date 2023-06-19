@@ -126,6 +126,8 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.goToToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -672,7 +674,9 @@
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exportCalendarToolStripMenuItem,
-            this.importCalendarToolStripMenuItem});
+            this.importCalendarToolStripMenuItem,
+            this.toolStripSeparator4,
+            this.goToToolStripMenuItem});
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
@@ -1010,6 +1014,7 @@
             this.evtTextWordWrap.Size = new System.Drawing.Size(22, 22);
             this.evtTextWordWrap.TabIndex = 3;
             this.evtTextWordWrap.UseVisualStyleBackColor = true;
+            this.evtTextWordWrap.CheckedChanged += new System.EventHandler(this.evtTextWordWrap_CheckedChanged);
             // 
             // evtDescText
             // 
@@ -1052,6 +1057,7 @@
             this.cancel_Btn.TabIndex = 0;
             this.cancel_Btn.Text = "Cancel";
             this.cancel_Btn.UseVisualStyleBackColor = true;
+            this.cancel_Btn.Click += new System.EventHandler(this.cancel_Btn_Click);
             // 
             // ok_Btn
             // 
@@ -1135,6 +1141,17 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(538, 23);
             this.comboBox3.TabIndex = 1;
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(182, 6);
+            // 
+            // goToToolStripMenuItem
+            // 
+            this.goToToolStripMenuItem.Name = "goToToolStripMenuItem";
+            this.goToToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.goToToolStripMenuItem.Text = "Go to...";
             // 
             // MainForm
             // 
@@ -1297,6 +1314,8 @@
         private System.Windows.Forms.Button ok_Btn;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem goToToolStripMenuItem;
     }
 }
 
