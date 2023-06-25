@@ -243,6 +243,12 @@ namespace PDAShell.Main
         {
             switch (listView3.FocusedItem.Index)
             {
+                case 0:
+                    if (File.Exists(Application.StartupPath + "\\apps\\PDAShell.Calendar\\PDAShell.Calendar.exe"))
+                    {
+                        Process.Start(Application.StartupPath + "\\apps\\PDAShell.Calendar\\PDAShell.Calendar.exe");
+                    }
+                    break;
                 case 8:
                     showDialog(400, 196, "Other Installed Applications", "We don't know whether these applications can get you distracted.\n\nAre you sure you want to continue?", true, 1, true, true);
                     if (isAccepted)

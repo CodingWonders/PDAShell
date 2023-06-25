@@ -1,9 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.33801.198
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{83703242-1A6E-46B9-AA53-B0168E5399CA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDAShell.Main", "src\PDAShell.Main\PDAShell.Main.csproj", "{12B5C90D-706A-46C2-87FC-761CF6CF8D5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "apps", "apps", "{961FB006-D3E2-462F-98DA-64791A3556C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDAShell.Calendar", "src\apps\PDAShell.Calendar\PDAShell.Calendar.csproj", "{6D8EBA57-D4A6-498E-A30F-1F14AEDCF404}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EA8FD2D1-28EC-49CB-96D5-2E455E627240}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,11 +26,20 @@ Global
 		{12B5C90D-706A-46C2-87FC-761CF6CF8D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12B5C90D-706A-46C2-87FC-761CF6CF8D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12B5C90D-706A-46C2-87FC-761CF6CF8D5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D8EBA57-D4A6-498E-A30F-1F14AEDCF404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D8EBA57-D4A6-498E-A30F-1F14AEDCF404}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D8EBA57-D4A6-498E-A30F-1F14AEDCF404}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D8EBA57-D4A6-498E-A30F-1F14AEDCF404}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{12B5C90D-706A-46C2-87FC-761CF6CF8D5A} = {83703242-1A6E-46B9-AA53-B0168E5399CA}
+		{961FB006-D3E2-462F-98DA-64791A3556C2} = {83703242-1A6E-46B9-AA53-B0168E5399CA}
+		{6D8EBA57-D4A6-498E-A30F-1F14AEDCF404} = {961FB006-D3E2-462F-98DA-64791A3556C2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5B10950-6472-48B5-832D-CB1CAA2E2F39}
 	EndGlobalSection
 EndGlobal
